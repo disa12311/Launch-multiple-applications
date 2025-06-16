@@ -1,0 +1,149 @@
+/* src/App.css */
+
+:root {
+  --bg-color: #1e1e2e;
+  --sidebar-bg: #181825;
+  --main-bg: #1e1e2e;
+  --card-bg: #313244;
+  --text-color: #cdd6f4;
+  --accent-color: #89b4fa;
+  --hover-color: #45475a;
+  --active-color: #585b70;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background-color: var(--sidebar-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar h2 {
+  margin-top: 0;
+  color: var(--accent-color);
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+}
+.sidebar li {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.sidebar li:hover {
+  background-color: var(--hover-color);
+}
+.sidebar li.active {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: bold;
+}
+.add-workspace-btn {
+  background-color: transparent;
+  border: 1px dashed var(--hover-color);
+  color: var(--text-color);
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.add-workspace-btn:hover {
+  background-color: var(--hover-color);
+  border-color: var(--accent-color);
+}
+
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  padding: 20px 40px;
+  background-color: var(--main-bg);
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.main-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+.launch-btn {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.launch-btn:hover {
+  transform: scale(1.05);
+}
+
+/* App Grid */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+}
+.app-card, .add-app-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.app-card:hover, .add-app-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--hover-color);
+}
+.app-icon {
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.app-card p {
+  margin: 0;
+  word-break: break-all;
+}
+.add-app-card {
+    border: 2px dashed var(--hover-color);
+    font-size: 3rem;
+    color: var(--text-color);
+}
